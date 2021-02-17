@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Organizations</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Other</li>
+    </ol>
+  </nav>
+<div class="jumbotron text-center" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6Jeb-whAJqgbwrWTuUbBLnLnPXpdgI5EzA&usqp=CAU); background-size: cover; height: 200px">
+    <div class="container for-about">
+            <h1>Other</h1>
+        </div>
+    </div>
+    <div class="container">
+        <table class='table table-sm'>
+            <tr><th>Organization</th><th>Type</th><th>Description</th><th>Category</th><th>Website Link</th></tr>
+            {% for org in otherorgs %}
+            <tr>
+                <td>{{org.name}}</td>
+                <td>{{org.types}} </td>
+                <td>{{org.description}} </td>
+                <td>{{org.website}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br><br><br>
+
+
+{% endblock %}

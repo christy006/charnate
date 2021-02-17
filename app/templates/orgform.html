@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+        <div class="containter">
+            <div class="jumbotron text-center" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6Jeb-whAJqgbwrWTuUbBLnLnPXpdgI5EzA&usqp=CAU); background-size: cover; height: 200px">
+                <h3>New Organization</h3>
+            </div>
+            {% for field in form.errors %}
+                {% for error in form.errors[field] %}
+                    <div class="alert alert-error">
+                        <strong>Error!</strong>{{field}}: {{error}}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            <form method=post>
+                <table class="table">
+                <!--This displays the form from the form 0bject that was passed to the template. If the fileds 
+                    have values in themthat were set by the routes code, then it will be editing.  If they are 
+                    empty it will create a new secion. -->
+
+                <tr><td>{{ form.hidden_tag() }}{{ form.name.label }}</td><td>{{ form.name() }}</td></tr>
+                <!--Where are these methods from?-->
+                <!--Where does label come from?-->
+                <tr><td>{{ form.types.label }}</td><td>{{ form.types() }}</td></tr>
+                <tr><td>{{ form.description.label }}</td><td>{{ form.description() }}</td></tr>
+                <tr><td>{{ form.category.label }}</td><td>{{ form.category() }}</td></tr>
+                <tr><td>{{ form.website.label }}</td><td>{{ form.website() }}</td></tr>
+                <tr><td colspan="2">{{form.submit()}}</td></tr>
+                </table>
+            </form>
+
+        </div>
+
+
+
+
+{% endblock %}
