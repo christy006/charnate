@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Organizations</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{org.name}}</li>
+    </ol>
+  </nav>
+
+            <section id="showcase">
+                <div class="container">
+                  <h1>{{org.name}}</h1>
+                </div>
+              </section>
+    
+            <section id="our_mission">
+                <div class="container">
+                  <h1>Our Mission</h1>
+                  <center><p>{{org.description}}</p></center>
+                </div>
+              </section>
+          
+              <section id="contact">
+                <div class="container">
+                  <h1>Contact {{org.name}}!</h1>
+                    {{org.owner}}
+                  <form method=post>
+                    {{ form.hidden_tag() }}
+                    {{form.fname(placeholder="First Name")}}
+                    {{form.lname(placeholder="Last Name")}}
+                    {{form.email(placeholder="Email")}}
+                    {{form.message(placeholder="Message")}}
+                    {{form.submit()}}
+                    </form>
+                  </form>
+                </div>
+              </section>
+              <section id="source">
+                <div class="container">
+                  <h1>Donate!</h1>
+                  <form action="{{url_for('payment')}}" method="POST"> 
+                      <script type="text/javascript">
+                          src="https://checkout.stripe.com/checkout.js"
+                          class="stripe-button"
+                          data-key={{public_key}}
+                          data-amount=1999
+                          data-name="Organization Donation"
+                          data-description="Donation"
+                          data-locale="auto"
+                          data-zip-code="true"
+                      </script>
+                  </form>
+                </div>
+            </section>
+     </div>
+    <br><br><br>
+
+
+{% endblock %}

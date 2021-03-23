@@ -4,10 +4,34 @@
 
 {% block body %}
 <!--This is the home page -->
-    <div class="jumbotron text-center" style="background-image: url(https://d3ayyz93zozlya.cloudfront.net/uploaded-images/articlemainimage/nonprofit-fundraising-tips-for-board-members-588a14c4a9180.jpeg); background-size: cover; height: 900px">
-        <div class="container for-about">
-                <h1>Welcome To Charnate!</h1>
+    <section id="showcase">
+            <div class="container">
+              <h1>Welcome to Charnate</h1>
             </div>
-        </div>
+          </section>
 
+        <section id="our_mission">
+            <div class="container">
+              <h1>Our Mission</h1>
+              <p>Our mission is to provide nonprofits with more funding, while also giving incentives to donors.</p>
+              <img src="https://www.legalzoom.com/sites/lz.com/files/articles/how_to_start_a_nonprofit.jpg" alt="">
+     
+            </div>
+          </section>
+      
+          <section id="contact">
+            <div class="container">
+              <h1>Contact Us!</h1>
+              <h3>Got Questions? Let Us Know!</h3>
+            
+              <form method=post>
+                {{ form.hidden_tag() }}
+                {{form.fname(placeholder="First Name")}}
+                {{form.lname(placeholder="Last Name")}}
+                {{form.email(placeholder="Email")}}
+                {{form.message(placeholder="Message")}}
+                {{form.submit()}}
+              </form>
+            </div>
+          </section>
 {% endblock %}

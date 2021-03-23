@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="jumbotron text-center" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6Jeb-whAJqgbwrWTuUbBLnLnPXpdgI5EzA&usqp=CAU); background-size: cover; height: 200px">
+    <div class="container for-about">
+            <h1>Corporations</h1>
+        </div>
+    </div>
+    <div class="container">
+        <table class='table table-sm'>
+            <tr><th>Corporation</th><th>Type</th><th>Description</th><th>Category</th><th>Website Link</th><th>Claim</th></tr>
+            {% for corp in corporations %}
+            <tr>
+                <td><a href="/org/{{org.id}}">{{corp.name}}</a></td>
+                <td>{corp.types}} </td>
+                <td>{{corp.description}} </td>
+                <td>{{corp.category}}</td>
+                <td>{{corp.website}} </td>
+                <td><a href="/orgclaim/{{org.id}}">Claim</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br><br><br>
+
+
+{% endblock %}

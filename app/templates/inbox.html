@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="jumbotron text-center" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6Jeb-whAJqgbwrWTuUbBLnLnPXpdgI5EzA&usqp=CAU); background-size: cover; height: 200px">
+    <div class="container for-about">
+            <h1>Inbox</h1>
+        </div>
+    </div>
+    <div class="container">
+        <table class='table table-sm'>
+            <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Message</th></tr>
+            {%for message in inbox%}
+                <tr><td>{{message.fname}}</td>
+                <td>{{message.lname}}</td>
+                <td>{{message.email}}</td>
+                <td>{{message.message}}</td>
+                </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <br><br><br>
+
+
+{% endblock %}

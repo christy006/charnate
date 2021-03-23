@@ -21,8 +21,8 @@ from app import app
 from .scopes import *
 
 from flask import render_template, redirect, url_for, request, session, flash
-from app.classes.data import User
-from app.classes.forms import UserForm
+from app.classes.data import User, Contact, Organization
+from app.classes.forms import UserForm, ContactForm
 from requests_oauth2.services import GoogleClient
 from requests_oauth2 import OAuth2BearerToken
 import requests
@@ -77,10 +77,10 @@ def before_request():
             session['credentials'] = credentials_to_dict(credentials)
 
 # This tells the app what to do if the user requests the home either via '/home' or just'/'
-@app.route('/home')
-@app.route('/')
-def index():
-    return render_template("index.html")
+#@app.route('/home')
+#@app.route('/')
+#def index():
+   # return render_template("index.html")
 
 # a lot of stuff going on here for the user as they log in including creatin new users if this is their first login
 @app.route('/login')
@@ -328,3 +328,8 @@ def credentials_to_dict(credentials):
           'scopes': credentials.scopes
           }
 
+@app.route("/inbox")
+def inbox():
+    currUser=User.objects.get(pk=session["currUserId"])
+    inbox=Contact.objects(owner=currUser.organization)
+    return render_template("inbox.html", inbox=inbox)

@@ -4,25 +4,24 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#">Organizations</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Other</li>
+      <li class="breadcrumb-item active" aria-current="page">Environment</li>
     </ol>
   </nav>
 <div class="jumbotron text-center" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6Jeb-whAJqgbwrWTuUbBLnLnPXpdgI5EzA&usqp=CAU); background-size: cover; height: 200px">
     <div class="container for-about">
-            <h1>Other</h1>
+            <h1>Environment</h1>
         </div>
     </div>
     <div class="container">
         <table class='table table-sm'>
-            <tr><th>Organization</th><th>Type</th><th>Description</th><th>Category</th><th>Website Link</th><th>Claim</th></tr>
-            {% for org in otherorgs %}
+            <tr><th>Organization</th><th>Type</th><th>Description</th><th>Category</th><th>Website Link</th></tr><th>Claim</th></tr>
+            {% for org in environmentorgs %}
             <tr>
-                <td><a href="/org/{{org.id}}">{{org.name}}</a></td>
+                <td><a href="/org/{{org.id}}"></a>{{org.name}}</td>
                 <td>{{org.types}} </td>
                 <td>{{org.description}} </td>
-                <td>{{org.category}}</td>
                 <td>{{org.website}} </td>
-                <td><a href="/orgclaim/{{org.id}}">Claim</a></td>
+                <td><a href="/orgclaim/{{org.id}}">Claims</a></td>
             </tr>
             {% endfor %}
         </table>

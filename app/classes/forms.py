@@ -38,6 +38,13 @@ class OrganizationForm(FlaskForm):
     description=TextAreaField("Description")
     website=StringField("Website Link")
     submit = SubmitField("Submit")
+
+class ContactForm(FlaskForm):
+    fname=StringField("First Name")
+    lname=StringField("Last Name")
+    email=StringField("Email")
+    message=StringField("Message")
+    submit=SubmitField("Submit")
 # This is the form for creating and editing a Post.
 class PostForm(FlaskForm):
     subject = StringField("Title")

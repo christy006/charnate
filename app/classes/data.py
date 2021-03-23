@@ -44,6 +44,7 @@ class User(Document):
     # DateField() holds just a date.  There is also a DateTimeField()
     birthdate = DateField()
     # This is how you set the default sorting.  You can also sort records after you retreive them in the route.
+    organization=ReferenceField("Organization")
     meta = {
         'ordering': ['+lname', '+fname']
     }
@@ -79,8 +80,8 @@ class Feedback(Document):
     meta = {
         'ordering': ['+status','+priority', '+createdate']
     }
+    #orgs are on users
 class Organization(Document):
-    owner=ReferenceField(User,reverse_delete_rule=CASCADE)
     types=StringField()
     name=StringField()
     description=StringField()
@@ -89,7 +90,7 @@ class Organization(Document):
 
 class Relation(Document):
     nonprofit=ReferenceField(Organization, reverse_delete_rule=CASCADE)
-    corportation=ReferenceField(Organization, reverse_delete_rule=CASCADE)
+    corporatation=ReferenceField(Organization, reverse_delete_rule=CASCADE)
     description=StringField()
 # a post can be any communication from the website user.  Comments, 
 # the next class in this file, is a comment
@@ -125,6 +126,12 @@ class Comment(Document):
     meta = {
         'ordering': ['+createdate']
     }
+class Contact(Document):
+    owner=ReferenceField(Organization, reverse_delete_rule=CASCADE)
+    fname=StringField()
+    lname=StringField()
+    email=StringField()
+    message=StringField()
 
 # Events are items that are displayed on the calendar.  The fields are very simple and
 # and can easily be changed to add other information that you want. 
