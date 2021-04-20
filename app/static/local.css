@@ -302,6 +302,82 @@ header li{
 #orgchart tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+#showcase {
+    min-height: 700px;
+    background:url(https://d3ayyz93zozlya.cloudfront.net/uploaded-images/articlemainimage/nonprofit-fundraising-tips-for-board-members-588a14c4a9180.jpeg) no-repeat 0 -350px ;
+    text-align: center;
+    color: black;
+}
+
+#showcase h1{
+    margin-top: 50px;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#showcase p{
+    font-size: 20px;
+}
+
+#our_mission{
+    padding: 50px;
+    background-color: white;
+    min-height: 100px;
+    text-align: center;
+}
+
+#our_mission h1{
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+#our_mission p{
+    width: 35%;
+    margin: auto;
+    overflow: hidden;
+    float: left;
+    margin-top: 175px;
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+#our_mission img{
+    margin-top: 30px;
+    float: right;
+}
+
+#contact{
+    padding: 50px;
+    background-color: #f5f5f5;
+    min-height: 100px;
+    text-align: center;
+}
+
+#contact h1{
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+#contact h3{
+    float: left;
+    margin-top: 35px;
+}
+
+#contact form{
+    float: right;
+    margin-top: 15px;
+}
+
+#contact input[type="email"]{
+    height: 75px;
+    width: 210px;
+}
+
+#contact input[type="text"]{
+    height: 75px;
+    width: 210px;
+}
  
  
  

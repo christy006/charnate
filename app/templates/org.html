@@ -40,16 +40,15 @@
                 <div class="container">
                   <h1>Donate!</h1>
                   <form action="{{url_for('payment')}}" method="POST"> 
-                      <script type="text/javascript">
-                          src="https://checkout.stripe.com/checkout.js"
+                      <script
+                          src="https://checkout.stripe.com/checkout.js";
                           class="stripe-button"
-                          data-key={{public_key}}
-                          data-amount=1999
+                          data-key="{{public_key}}"
+                          data-amount="1999"
                           data-name="Organization Donation"
                           data-description="Donation"
                           data-locale="auto"
-                          data-zip-code="true"
-                      </script>
+                          data-zip-code="true"></script>
                   </form>
                 </div>
             </section>
